@@ -1,7 +1,7 @@
 # SparkfunVariableLoadGUI
 GUI for the [Sparkfun Variable Load Kit](https://www.sparkfun.com/products/14449)
 
-![](screenshot.png)
+![](screenshot.PNG)
 
 # Installation
 
