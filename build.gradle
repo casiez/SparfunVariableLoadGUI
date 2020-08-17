@@ -14,7 +14,7 @@ sourceCompatibility = 14
 targetCompatibility = 14
 
 project.ext.buildDate = new Date()
-project.version = "0.9"
+project.version = "0.91"
 
 javafx {
     version = "14"
