@@ -46,6 +46,7 @@ jlink {
             imageOptions += ['--icon', 'icon/icon.icns']
         } else if(os.windows) {
             installerOptions = ['--win-per-user-install', '--win-dir-chooser', '--win-menu']
+            imageOptions += ['--icon', 'icon/icon.ico']
 //        } else {
 //            installerType = 'deb' // 'rpm'
         }
