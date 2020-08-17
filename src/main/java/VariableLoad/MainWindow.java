@@ -28,6 +28,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.Slider;
+import javafx.scene.control.Tooltip;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
@@ -96,7 +97,7 @@ public class MainWindow extends Application {
 		ToggleGroup group = new ToggleGroup();
 		tbON.setToggleGroup(group);
 		tbOFF.setToggleGroup(group);
-		tbON.setSelected(true);
+		tbOFF.setSelected(true);
 		HBox hbONOFF = new HBox(tbON,tbOFF);
 		HBox.setHgrow(tbON, Priority.ALWAYS);
 		HBox.setHgrow(tbOFF, Priority.ALWAYS);
@@ -104,6 +105,7 @@ public class MainWindow extends Application {
 		tbOFF.setMaxWidth(Double.MAX_VALUE);
 
 		Label ilimlb = new Label("I limit (A)");
+		ilimlb.setTooltip(new Tooltip("The current limit set for the load."));
 		ilimitSlider = new Slider(0,4,0);
 		ilimitSlider.valueProperty().addListener(new ChangeListener<Object>() {
 			@Override
@@ -134,6 +136,7 @@ public class MainWindow extends Application {
 		HBox.setHgrow(ilimitLbl, Priority.ALWAYS);
 		
 		Label vminlb = new Label("V min (V)");
+		vminlb.setTooltip(new Tooltip("The current minimum voltage before the load cuts out"));
 		vminSlider = new Slider(0,30,0);
 		vminSlider.valueProperty().addListener(new ChangeListener<Object>() {
 			@Override
@@ -170,6 +173,8 @@ public class MainWindow extends Application {
 		isourceLbl = new Label("");
 		isourceLbl.setMaxWidth(Double.MAX_VALUE);
 		isourceLbl.setStyle("-fx-font-size:20px;");
+		isourceLbl.setTooltip(new Tooltip("The actual current being drawn from the source."));
+
 		vsourceLbl = new Label("");	
 		vsourceLbl.setMaxWidth(Double.MAX_VALUE);
 		vsourceLbl.setStyle("-fx-font-size:20px;");
@@ -182,6 +187,8 @@ public class MainWindow extends Application {
 		
 		maHoursLbl = new Label("0.0 mAH");
 		maHoursLbl.setMaxWidth(Double.MAX_VALUE);
+		maHoursLbl.setTooltip(new Tooltip("The number of milliamp hours drawn from the source since it was last reset."));
+		 
 		Button btresetmaH = new Button("Reset mAH");
 		btresetmaH.setMaxWidth(Double.MAX_VALUE);
 		btresetmaH.setOnAction(e -> {
